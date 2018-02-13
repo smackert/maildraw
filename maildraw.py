@@ -1,5 +1,5 @@
 ##############################
-## 2018
+## 2018 sm
 ## maildraw.py -h HOST [-p PORT} -l USER:PASS LIST
 ##
 ##
