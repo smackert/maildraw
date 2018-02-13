@@ -9,22 +9,23 @@ import sys
 import telnetlib
 import argparse
 
-print "hello world"
-parse = argparse.ArgumentParser()
-args = parse.parse_args()
+print "hello world" #remove after debugging
+parser = argparse.ArgumentParser()
+
 
 try:
-    parse.add_argument("-h", "--hostname", help="host")
-    parse.add_argument("-p", "--port", help="port (default 110)")
-    parse.add_argument("-l", "--loginlist", help="user:pass list")
+    parser.add_argument("-t", "--target", help="host")
+    parser.add_argument("-p", "--port", help="port (default 110)")
+    parser.add_argument("-l", "--loginlist", help="user:pass list")
 
-    print ("Accessing {}:{} with {}".format(
-        args.hostname,
+    args = parser.parse_args()
+    print (
+        args.target,
         args.port,
         args.loginlist
-    ))
+        )
 except:
-    print "usage: maildraw.py -h HOST [-p PORT -l USER:PASS LIST"
+    print "Failed"
 
 
-print "goodbye world"
+print "goodbye world" #remove after debugging
